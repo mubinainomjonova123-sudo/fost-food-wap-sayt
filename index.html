@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="uz" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Andijon Food — Mazali ta'm, tezkor yetkazib berish!</title>
+  
+  <!-- Google Fonts: Plus Jakarta Sans & Bebas Neue -->
+  <link rel="preconnect" href="./style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  
+  <!-- Asosiy CSS fayl -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <!-- Logo -->
+      <a href="#home" class="logo">
+        <div class="logo-icon"><i class="fa-solid fa-burger"></i></div>
+        <div class="logo-text">ANDIJON <span>FOOD</span></div>
+      </a>
+
+      <!-- Asosiy Navigatsiya Linklari -->
+      <nav class="nav-links" id="navLinks">
+        <a href="#home" class="nav-link active" data-i18n="nav_home">Bosh sahifa</a>
+        <a href="#menu" class="nav-link" data-i18n="nav_menu">Menyu</a>
+        <a href="#promos" class="nav-link" data-i18n="nav_promos">Aksiyalar</a>
+        <a href="#about" class="nav-link" data-i18n="nav_about">Biz haqimizda</a>
+        <a href="#contact" class="nav-link" data-i18n="nav_contact">Aloqa</a>
+      </nav>
+
+      <!-- O'ng taraf boshqaruv tugmalari -->
+      <div class="nav-actions">
+        <!-- Qidiruv tugmasi -->
+        <button class="icon-btn" id="navSearchBtn" aria-label="Qidiruv" title="Qidiruv">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+
+        <!-- Til tanlash -->
+        <div class="lang-select-wrapper">
+          <select id="languageSelect" aria-label="Tilni tanlang">
+            <option value="uz">UZ</option>
+            <option value="ru">RU</option>
+            <option value="en">EN</option>
+          </select>
+        </div>
+
+        <!-- Dark / Light Mode tugmasi -->
+        <button class="icon-btn" id="themeToggleBtn" aria-label="Rejimni o'zgartirish" title="Tun/Kun rejimi">
+          <i class="fa-solid fa-moon" id="themeIcon"></i>
+        </button>
+
+        <!-- Savatcha tugmasi -->
+        <button class="cart-btn" id="openCartBtn" aria-label="Savatcha">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="cart-badge" id="cartCount">0</span>
+        </button>
+
+        <!-- Mobil menyu tugmasi -->
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Menyu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section class="hero" id="home">
+    <div class="hero-bg-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+    </div>
+    <div class="container hero-container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <i class="fa-solid fa-bolt"></i>
+          <span data-i18n="hero_badge">Andijon bo'ylab 30 daqiqada yetkazib berish</span>
+        </div>
+        <div class="hero-giant-word">FAST FOOD</div>
+        <h1 class="hero-title" data-i18n="hero_title">Mazali ta'm — tezkor yetkazib berish!</h1>
+        <p class="hero-desc" data-i18n="hero_desc">
+          Andijonning eng sara go'shtlari, yangi pishirilgan nonlar va maxsus souslar uyg'unligi. Issiq holda eshigingizgacha yetkazamiz!
+        </p>
+        <div class="hero-buttons">
+          <a href="#menu" class="btn btn-primary">
+            <i class="fa-solid fa-fire-flame-curved"></i>
+            <span data-i18n="hero_btn_order">Buyurtma berish</span>
+          </a>
+          <a href="#promos" class="btn btn-secondary">
+            <i class="fa-solid fa-utensils"></i>
+            <span data-i18n="hero_btn_menu">Menyuni ko'rish</span>
+          </a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-item">
+            <strong>30+</strong>
+            <span data-i18n="stat_menu">Taom turlari</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <strong>25-35 min</strong>
+            <span data-i18n="stat_delivery">O'rtacha yetkazish</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <strong>4.9 <i class="fa-solid fa-star text-yellow"></i></strong>
+            <span data-i18n="stat_rating">Mijozlar bahosi</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-img-ring"></div>
+        <img 
+          src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=85" 
+          alt="Andijon Food Special Burger" 
+          class="hero-main-img"
+        />
+        <div class="floating-card card-top">
+          <i class="fa-solid fa-fire text-red"></i>
+          <div>
+            <strong data-i18n="float_hot">100% Issiq holda</strong>
+            <small data-i18n="float_term">Maxsus termopaketda</small>
+          </div>
+        </div>
+        <div class="floating-card card-bottom">
+          <i class="fa-solid fa-award text-yellow"></i>
+          <div>
+            <strong data-i18n="float_halal">Halol va Sifatli</strong>
+            <small data-i18n="float_fresh">Har kuni yangi mahsulot</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= AKSIYALAR (PROMOS) ================= -->
+  <section class="promos-section" id="promos">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle" data-i18n="promo_sub">Foydali takliflar</span>
+        <h2 class="section-title" data-i18n="promo_title">Qaynoq Aksiyalar va Setlar</h2>
+      </div>
+
+      <div class="promos-grid" id="promosGrid">
+        <!-- JS orqali dinamik yuklanadi -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MENYU, QIDIRUV VA FILTER ================= -->
+  <section class="menu-section" id="menu">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle" data-i18n="menu_sub">Mazali tanlov</span>
+        <h2 class="section-title" data-i18n="menu_title">Bizning Menyu</h2>
+      </div>
+
+      <!-- Qidiruv va Saralash Paneli -->
+      <div class="menu-controls">
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <input 
+            type="text" 
+            id="searchInput" 
+            data-i18n-placeholder="search_placeholder"
+            placeholder="Taom nomi yoki kategoriyani qidiring..." 
+          />
+          <button class="clear-search-btn hidden" id="clearSearchBtn" aria-label="Tozalash">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        <div class="sort-box">
+          <label for="sortSelect"><i class="fa-solid fa-arrow-up-wide-short"></i> <span data-i18n="sort_label">Saralash:</span></label>
+          <select id="sortSelect">
+            <option value="all" data-i18n="sort_all">Barcha mahsulotlar</option>
+            <option value="popular" data-i18n="sort_popular">Eng mashhur</option>
+            <option value="rating" data-i18n="sort_rating">Eng yuqori reyting</option>
+            <option value="price_asc" data-i18n="sort_cheap">Eng arzon</option>
+            <option value="price_desc" data-i18n="sort_expensive">Eng qimmat</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Kategoriyalar Tablari -->
+      <div class="category-tabs-wrapper">
+        <div class="category-tabs" id="categoryTabs">
+          <!-- JS orqali 9 ta kategoriya + "Barchasi" yuklanadi -->
+        </div>
+      </div>
+
+      <!-- Mahsulotlar Konteyneri (Kategoriyalar bo'yicha alohida bo'limlar) -->
+      <div id="menuSectionsContainer">
+        <!-- JS orqali har bir kategoriya alohida bo'lim sifatida render qilinadi -->
+      </div>
+
+      <!-- Topilmadi xabari -->
+      <div class="empty-state hidden" id="noResultsState">
+        <div class="empty-icon"><i class="fa-solid fa-burger"></i></div>
+        <h3 data-i18n="not_found_title">Mahsulot topilmadi</h3>
+        <p data-i18n="not_found_desc">Boshqa kalit so'z bilan qidirib ko'ring yoki filtrlarni tozalang.</p>
+        <button class="btn btn-primary" id="resetFiltersBtn" data-i18n="reset_filters">Barcha mahsulotlarni ko'rsatish</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= BIZ HAQIMIZDA ================= -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-images">
+          <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80" alt="Andijon Food Oshxonasi" class="about-img-main">
+          <div class="about-experience-badge">
+            <span>#1</span>
+            <p data-i18n="about_badge">Andijonning sevimli fast-food brendi</p>
+          </div>
+        </div>
+
+        <div class="about-content">
+          <span class="section-subtitle" data-i18n="about_sub">Biz haqimizda</span>
+          <h2 class="section-title" data-i18n="about_title">Nega aynan Andijon Food?</h2>
+          <p class="about-text" data-i18n="about_desc">
+            Andijon Food — bu shunchaki tezkor ovqatlanish maskani emas, balki har bir mijozga mehr va yuqori mas'uliyat bilan tayyorlanadigan sifatli taomlar makonidir. Biz mahalliy fermerlarning eng yangi mahsulotlaridan foydalanamiz.
+          </p>
+
+          <div class="features-grid">
+            <div class="feature-card">
+              <div class="feature-icon"><i class="fa-solid fa-leaf"></i></div>
+              <h4 data-i18n="feat_1_title">Sifatli mahsulotlar</h4>
+              <p data-i18n="feat_1_desc">Faqat halol, yangi va tekshirilgan masalliqlardan foydalanamiz.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon"><i class="fa-solid fa-motorcycle"></i></div>
+              <h4 data-i18n="feat_2_title">Tezkor yetkazib berish</h4>
+              <p data-i18n="feat_2_desc">Andijon shahri bo'ylab buyurtmalar issiq holda tezkor yetkaziladi.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon"><i class="fa-solid fa-tags"></i></div>
+              <h4 data-i18n="feat_3_title">Hamyonbop narxlar</h4>
+              <p data-i18n="feat_3_desc">Har bir oila va talaba uchun qulay narxlar hamda doimiy aksiyalar.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon"><i class="fa-solid fa-heart"></i></div>
+              <h4 data-i18n="feat_4_title">Mijozlar mamnunligi</h4>
+              <p data-i18n="feat_4_desc">Har bir mijoz fikri biz uchun muhim va xizmat sifatini doim oshiramiz.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MIJOZLAR FIKRI ================= -->
+  <section class="reviews-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle" data-i18n="rev_sub">Fikr-mulohazalar</span>
+        <h2 class="section-title" data-i18n="rev_title">Mijozlarimiz biz haqimizda</h2>
+      </div>
+
+      <div class="reviews-grid" id="reviewsGrid">
+        <!-- JS orqali dinamik render qilinadi -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ALOQA BO'LIMI ================= -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle" data-i18n="contact_sub">Bog'lanish</span>
+        <h2 class="section-title" data-i18n="contact_title">Bizning manzil va aloqa</h2>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info-cards">
+          <div class="contact-card">
+            <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div>
+              <h4 data-i18n="contact_addr_title">Manzilimiz</h4>
+              <p data-i18n="contact_addr_val">Andijon viloyati, Andijon shahri, Bobur shoh ko'chasi (Mo'ljal: Markaz)</p>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-icon"><i class="fa-solid fa-phone-volume"></i></div>
+            <div>
+              <h4 data-i18n="contact_phone_title">Telefon raqami</h4>
+              <p>+998 (XX) XXX-XX-XX <span class="sample-tag" data-i18n="sample_tag">(Namuna)</span></p>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-icon"><i class="fa-solid fa-clock"></i></div>
+            <div>
+              <h4 data-i18n="contact_hours_title">Ish vaqti</h4>
+              <p data-i18n="contact_hours_val">Har kuni: 09:00 dan 02:00 gacha (Dam olish kunlarisiz)</p>
+            </div>
+          </div>
+
+          <div class="contact-socials">
+            <a href="#contact" class="social-link telegram" onclick="showToast(translations[currentLang].toast_social_demo); return false;">
+              <i class="fa-brands fa-telegram"></i>
+              <span>@andijonfood_uz (Namuna)</span>
+            </a>
+            <a href="#contact" class="social-link instagram" onclick="showToast(translations[currentLang].toast_social_demo); return false;">
+              <i class="fa-brands fa-instagram"></i>
+              <span>@andijonfood.official (Namuna)</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Google Maps (Andijon shahri) -->
+        <div class="map-wrapper">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48341.83963876709!2d72.30750055!3d40.78206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38bc901d6b13d4ef%3A0xb639004c8308af24!2sAndijan%2C%20Andijan%20Region%2C%20Uzbekistan!5e0!3m2!1sen!2s!4v1710000000000!5m2!1sen!2s" 
+            width="100%" 
+            height="100%" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Andijon shahri xaritasi">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#home" class="logo footer-logo">
+            <div class="logo-icon"><i class="fa-solid fa-burger"></i></div>
+            <div class="logo-text">ANDIJON <span>FOOD</span></div>
+          </a>
+          <p data-i18n="footer_desc">
+            Andijon viloyati va Andijon shahri aholisi uchun eng mazali, halol va tezkor fast-food yetkazib berish xizmati.
+          </p>
+          <div class="footer-social-icons">
+            <a href="#contact" aria-label="Telegram" onclick="showToast(translations[currentLang].toast_social_demo); return false;"><i class="fa-brands fa-telegram"></i></a>
+            <a href="#contact" aria-label="Instagram" onclick="showToast(translations[currentLang].toast_social_demo); return false;"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#contact" aria-label="Facebook" onclick="showToast(translations[currentLang].toast_social_demo); return false;"><i class="fa-brands fa-facebook-f"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="footer_links_title">Sayt bo'limlari</h4>
+          <ul>
+            <li><a href="#home" data-i18n="nav_home">Bosh sahifa</a></li>
+            <li><a href="#menu" data-i18n="nav_menu">Menyu</a></li>
+            <li><a href="#promos" data-i18n="nav_promos">Aksiyalar</a></li>
+            <li><a href="#about" data-i18n="nav_about">Biz haqimizda</a></li>
+            <li><a href="#contact" data-i18n="nav_contact">Aloqa</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="footer_cats_title">Kategoriyalar</h4>
+          <ul id="footerCategoriesList">
+            <!-- JS orqali to'ldiriladi -->
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="footer_contact_title">Aloqa ma'lumotlari</h4>
+          <ul class="footer-contact-list">
+            <li><i class="fa-solid fa-location-dot"></i> <span data-i18n="contact_addr_val">Andijon viloyati, Andijon shahri</span></li>
+            <li><i class="fa-solid fa-phone"></i> <span>+998 (XX) XXX-XX-XX</span></li>
+            <li><i class="fa-solid fa-clock"></i> <span>09:00 — 02:00</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 <strong>Andijon Food</strong>. <span data-i18n="footer_rights">Barcha huquqlar himoyalangan.</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= SAVATCHA (SLIDE-OVER DRAWER) ================= -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+    <div class="cart-header">
+      <h3><i class="fa-solid fa-bag-shopping"></i> <span data-i18n="cart_title">Savatcha</span></h3>
+      <button class="close-drawer-btn" id="closeCartBtn" aria-label="Yopish">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <div class="cart-body" id="cartItemsContainer">
+      <!-- Savatcha mahsulotlari JS orqali chiqadi -->
+    </div>
+
+    <div class="cart-footer" id="cartFooter">
+      <div class="cart-summary-row">
+        <span data-i18n="cart_delivery">Yetkazib berish (Andijon sh.):</span>
+        <strong class="text-green" data-i18n="cart_free">Bepul</strong>
+      </div>
+      <div class="cart-total-row">
+        <span data-i18n="cart_total">Jami summa:</span>
+        <strong id="cartTotalPrice">0 so'm</strong>
+      </div>
+      <div class="cart-footer-actions">
+        <button class="btn btn-outline-danger" id="clearCartBtn">
+          <i class="fa-solid fa-trash-can"></i> <span data-i18n="cart_clear">Tozalash</span>
+        </button>
+        <button class="btn btn-primary" id="proceedCheckoutBtn">
+          <span data-i18n="cart_checkout">Buyurtma berish</span> <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ================= BUYURTMA BERISH (CHECKOUT MODAL) ================= -->
+  <div class="modal-backdrop hidden" id="checkoutModal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3><i class="fa-solid fa-clipboard-check"></i> <span data-i18n="checkout_title">Buyurtmani rasmiylashtirish</span></h3>
+        <button class="close-modal-btn" id="closeCheckoutModalBtn"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+
+      <form id="checkoutForm" class="checkout-form">
+        <div class="form-grid">
+          <!-- Ism va familiya -->
+          <div class="form-group">
+            <label for="custName" data-i18n="form_name">Ism va familiya *</label>
+            <input type="text" id="custName" required data-i18n-placeholder="form_name_ph" placeholder="Masalan: Jasurbek Karimov">
+          </div>
+
+          <!-- Telefon raqami -->
+          <div class="form-group">
+            <label for="custPhone" data-i18n="form_phone">Telefon raqami *</label>
+            <input type="tel" id="custPhone" required placeholder="+998 90 123 45 67" value="+998 ">
+          </div>
+
+          <!-- Viloyat -->
+          <div class="form-group">
+            <label for="custRegion" data-i18n="form_region">Viloyat *</label>
+            <select id="custRegion" required>
+              <option value="Andijon viloyati" data-i18n="region_andijon">Andijon viloyati</option>
+            </select>
+          </div>
+
+          <!-- Shahar -->
+          <div class="form-group">
+            <label for="custCity" data-i18n="form_city">Shahar / Hudud *</label>
+            <select id="custCity" required>
+              <option value="Andijon shahri" data-i18n="city_andijon">Andijon shahri</option>
+              <option value="Asaka shahri" data-i18n="city_asaka">Asaka shahri</option>
+              <option value="Xonobod shahri" data-i18n="city_xonobod">Xonobod shahri</option>
+              <option value="Shahrixon shahri" data-i18n="city_shahrixon">Shahrixon shahri</option>
+            </select>
+          </div>
+
+          <!-- Tuman / MFY -->
+          <div class="form-group">
+            <label for="custDistrict" data-i18n="form_district">Tuman / Massiv *</label>
+            <select id="custDistrict" required>
+              <option value="Andijon shahar markazi">Andijon shahar markazi</option>
+              <option value="1-mikrorayon">1-mikrorayon</option>
+              <option value="2-mikrorayon">2-mikrorayon</option>
+              <option value="3-mikrorayon">3-mikrorayon</option>
+              <option value="4-mikrorayon">4-mikrorayon</option>
+              <option value="Yangi Bozor hududi">Yangi Bozor hududi</option>
+              <option value="Eski Shahar hududi">Eski Shahar hududi</option>
+              <option value="Klubnichniy massivi">Klubnichniy massivi</option>
+              <option value="Oltinko'l tumani">Oltinko'l tumani</option>
+              <option value="Andijon tumani (Kuyganyor)">Andijon tumani (Kuyganyor)</option>
+              <option value="Buloqboshi tumani">Buloqboshi tumani</option>
+              <option value="Xo'jaobod tumani">Xo'jaobod tumani</option>
+            </select>
+          </div>
+
+          <!-- Ko'cha va uy raqami -->
+          <div class="form-group">
+            <label for="custStreet" data-i18n="form_street">Ko'cha, uy va xonadon raqami *</label>
+            <input type="text" id="custStreet" required data-i18n-placeholder="form_street_ph" placeholder="Bobur shoh ko'chasi, 45-uy, 12-xonadon">
+          </div>
+        </div>
+
+        <!-- Yetkazib berish izohi -->
+        <div class="form-group">
+          <label for="custNote" data-i18n="form_note">Yetkazib berish uchun qo'shimcha izoh</label>
+          <textarea id="custNote" rows="2" data-i18n-placeholder="form_note_ph" placeholder="Domofon kodi, mo'ljal yoki kuryer uchun eslatma..."></textarea>
+        </div>
+
+        <!-- To'lov turi -->
+        <div class="form-group">
+          <label data-i18n="form_payment">To'lov turini tanlang *</label>
+          <div class="payment-options">
+            <label class="payment-card">
+              <input type="radio" name="paymentMethod" value="cash" checked>
+              <div class="payment-content">
+                <i class="fa-solid fa-money-bill-wave text-green"></i>
+                <span data-i18n="pay_cash">Naqd pul</span>
+              </div>
+            </label>
+
+            <label class="payment-card">
+              <input type="radio" name="paymentMethod" value="click">
+              <div class="payment-content">
+                <i class="fa-solid fa-mobile-screen-button text-blue"></i>
+                <span>Click <small class="demo-pill">DEMO</small></span>
+              </div>
+            </label>
+
+            <label class="payment-card">
+              <input type="radio" name="paymentMethod" value="payme">
+              <div class="payment-content">
+                <i class="fa-solid fa-credit-card text-cyan"></i>
+                <span>Payme <small class="demo-pill">DEMO</small></span>
+              </div>
+            </label>
+          </div>
+
+          <!-- Demo to'lov ogohlantiruvi -->
+          <div class="demo-payment-notice hidden" id="demoPaymentNotice">
+            <i class="fa-solid fa-circle-info"></i>
+            <span data-i18n="demo_pay_warning">
+              Diqqat: Ushbu loyiha demo rejimda ishlamoqda. Click va Payme orqali real pul yechilmaydi va haqiqiy tranzaksiya amalga oshirilmaydi.
+            </span>
+          </div>
+        </div>
+
+        <!-- Buyurtma qisqacha hisobi -->
+        <div class="checkout-summary-box">
+          <div class="summary-line">
+            <span data-i18n="checkout_items_count">Mahsulotlar soni:</span>
+            <strong id="checkoutItemsCount">0 ta</strong>
+          </div>
+          <div class="summary-line total">
+            <span data-i18n="checkout_total_sum">To'lanadigan jami summa:</span>
+            <strong id="checkoutTotalSum">0 so'm</strong>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block" data-i18n="confirm_order_btn">
+          Buyurtmani tasdiqlash
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ================= BUYURTMA TASDIQLANDI (RECEIPT MODAL) ================= -->
+  <div class="modal-backdrop hidden" id="orderSuccessModal">
+    <div class="modal-box receipt-box">
+      <div class="success-icon-circle">
+        <i class="fa-solid fa-check"></i>
+      </div>
+      <h3 data-i18n="order_success_title">Buyurtmangiz qabul qilindi!</h3>
+      <p class="order-number-badge">
+        <span data-i18n="order_id_label">Buyurtma raqami:</span> <strong id="receiptOrderId">#AF-0000</strong>
+      </p>
+
+      <div id="receiptPaymentStatus" class="receipt-payment-note"></div>
+
+      <div class="receipt-details">
+        <div class="receipt-row">
+          <span data-i18n="receipt_customer">Mijoz:</span>
+          <strong id="receiptCustomerName">-</strong>
+        </div>
+        <div class="receipt-row">
+          <span data-i18n="receipt_address">Manzil:</span>
+          <strong id="receiptAddress">-</strong>
+        </div>
+        <div class="receipt-row">
+          <span data-i18n="receipt_pay_type">To'lov turi:</span>
+          <strong id="receiptPayMethod">-</strong>
+        </div>
+
+        <hr class="receipt-divider">
+        <h4 data-i18n="receipt_items_title">Buyurtma tarkibi:</h4>
+        <ul class="receipt-items-list" id="receiptItemsList">
+          <!-- JS orqali chiqadi -->
+        </ul>
+        <hr class="receipt-divider">
+
+        <div class="receipt-total-row">
+          <span data-i18n="cart_total">Jami summa:</span>
+          <strong id="receiptTotalAmount">0 so'm</strong>
+        </div>
+      </div>
+
+      <button class="btn btn-primary btn-block" id="closeSuccessModalBtn" data-i18n="close_btn">
+        Tushunarli, rahmat!
+      </button>
+    </div>
+  </div>
+
+  <!-- Toast xabarnoma -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- JavaScript fayli -->
+  <script src="./app.js"></script>
+</body>
+</html>
